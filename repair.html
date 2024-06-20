@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Reparación</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="pngwing.com.png" alt="Apple Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="repair.html">Reparación</a></li>
+                <li><a href="services.html">Servicios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>Formulario de Reparación</h1>
+            <form id="repair-form" action="#" method="POST">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="device">Dispositivo:</label>
+                <select id="device" name="device" required>
+                    <option value="iPhone">iPhone</option>
+                    <option value="iPad">iPad</option>
+                    <option value="MacBook">MacBook</option>
+                    <option value="Apple Watch">Apple Watch</option>
+                </select>
+                
+                <label for="issue">Descripción del Problema:</label>
+                <textarea id="issue" name="issue" required></textarea>
+                
+                <label for="address">Dirección:</label>
+                <input type="text" id="address" name="address" required>
+                
+                <label for="pickup_date">Fecha de Recolección:</label>
+                <input type="date" id="pickup_date" name="pickup_date" required>
+                
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="success-message" class="success-message">
+                <h2>¡Registro Exitoso!</h2>
+                <p>Tu solicitud de reparación ha sido enviada correctamente.</p>
+            </div>
+        </section>
+    </main>
+    <script>
+        document.getElementById('repair-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Previene el envío del formulario
+            document.getElementById('repair-form').style.display = 'none'; // Oculta el formulario
+            document.getElementById('success-message').style.display = 'block'; // Muestra el mensaje de éxito
+        });
+    </script>
+</body>
+</html>
